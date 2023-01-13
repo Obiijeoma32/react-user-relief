@@ -1,0 +1,968 @@
+@import url("https://fonts.cdnfonts.com/css/euclid-circular-b?styles=100047");
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #ffff;
+  font-family: "Euclid Circular B", sans-serif;
+  width: 100vh;
+  height: 100vh;
+  overflow-x: hidden;
+}
+/* main body */
+
+.dashboard {
+  display: flex;
+  width: 100%;
+}
+/* side bar path */
+.side-bar {
+  width: 221px;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: #ffff;
+  border: 0.5px solid #c4ccd2;
+  /* transform: rotate(-90deg); */
+  position: fixed;
+}
+.side-bar-profile {
+  background: #f5f5f6;
+  border-radius: 10px;
+  width: 12rem;
+  height: 66px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.profile-bar {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  margin-left: 3px;
+  text-align: center;
+  white-space: nowrap;
+}
+.profile-bar img {
+  width: 31px;
+  height: 31px;
+}
+.profile-bar h2 {
+  font-family: "Euclid Circular B";
+  font-size: 14px;
+  color: #000;
+  font-style: normal;
+  margin-left: 8px;
+}
+.side-bar-details {
+  width: 30px;
+  height: 20px;
+  margin-top: 35.26px;
+  padding-left: 34px;
+  white-space: nowrap;
+}
+.side-bar-link {
+  text-decoration: none;
+  font-family: "Euclid Circular B";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  color: #68717f;
+  margin-bottom: 25px;
+}
+.side-bar-icon {
+  padding-right: 18px;
+}
+.side-bar-logout {
+  padding-top: 6rem;
+}
+.side-bar-nav-click {
+  color: #0098db;
+  text-decoration: none;
+  font-family: "Euclid Circular B";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  margin-bottom: 25px;
+}
+.main-dashboard-container {
+  width: 100%;
+  height: 100vh;
+  padding-left: 16rem;
+  padding-right: 5rem;
+  padding-top: 1rem;
+  /* position: fixed; */
+  display: flex;
+  white-space: nowrap;
+}
+
+.main-dashboard-details {
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 20px;
+  color: #68717f;
+}
+.main-dashboard-icon-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin-left: 10rem;
+}
+.main-transaction-table {
+  width: 63.2rem;
+  height: 100%;
+  margin-top: 5px;
+  background: white;
+  border-radius: 3px;
+  padding-right: 5rem;
+  padding-left: 15rem;
+}
+.main-transaction-header {
+  padding-top: 8px;
+  margin-bottom: 7px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #68717f;
+  margin-left: 10px;
+}
+.transaction-table-options,
+.user-table-options {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 63rem;
+  height: 60px;
+  background: #f4f4f6;
+  border-radius: 4px;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.dispute-table-options,
+.settlement-table-options {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 63.7rem;
+  height: 60px;
+  background: #f4f4f6;
+  border-radius: 4px;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.terminal-table-options {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 63rem;
+  height: 60px;
+  background: #f4f4f6;
+  border-radius: 4px;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.transaction-table-input {
+  background: #ffffff;
+  border: 1px solid #e3e7eb;
+  border-radius: 4px;
+  width: 700px;
+  height: 40px;
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 16px;
+  color: #4d708d;
+}
+.terminal-table-input {
+  background: #ffffff;
+  border: 1px solid #e3e7eb;
+  border-radius: 4px;
+  width: 670px;
+  height: 40px;
+  margin-left: 10px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+}
+.search-transaction {
+  padding-top: 8px;
+  margin-right: 12px;
+  position: relative;
+  right: 27%;
+}
+.search-transaction::placeholder {
+  color: #4d708d;
+  font-family: "Euclid Circular B", sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  padding-left: 8px;
+}
+.transaction-table-filter,
+.settlement-table-filter {
+  width: 100px;
+  height: 32px;
+  background: #ffffff;
+  margin-top: 4px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border: 1px solid #e3e7eb;
+  border-radius: 4px;
+  display: flex;
+  font-weight: 300;
+  font-size: 14px;
+  color: #4d708d;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.transaction-table-filter1 {
+  width: 100px;
+  height: 32px;
+  background: #ffffff;
+  margin-top: 4px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border: 1px solid #e3e7eb;
+  border-radius: 4px;
+  display: flex;
+  font-weight: 300;
+  font-size: 14px;
+  color: #4d708d;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.user-export-button {
+  border: none;
+  background-color: transparent;
+  color: #4d708d;
+  align-content: center;
+}
+.transaction-table-output {
+  border-collapse: collapse;
+  margin: 15px 0;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  border: 1px solid #e3e7eb;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #4d708d;
+}
+.transaction-table-output thead,
+.user1-table-output thead {
+  font-family: "Euclid Circular B", sans-serif;
+  color: #00325c;
+  font-size: 16px;
+  /* font-weight: 400; */
+}
+.transaction-table-output thead tr {
+  text-align: left;
+  border: 1px solid #e3e7eb;
+}
+
+.transaction-table-output th,
+.transaction-table-output td {
+  padding: 12px 13px;
+}
+/* footer starts here */
+.footer {
+  background: #f4f4f6;
+  box-shadow: 0px 5px 200px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  width: 1025px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  color: #4d708d;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 18px;
+}
+.transaction-footer {
+  background: #f4f4f6;
+  box-shadow: 0px 5px 200px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  width: 1020px;
+  height: 53px;
+  display: flex;
+  justify-content: space-between;
+  color: #4d708d;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 20px;
+  line-height: 18px;
+}
+
+.users-footer {
+  background: #f4f4f6;
+  box-shadow: 0px 5px 200px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  width: 1015px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  color: #4d708d;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 18px;
+}
+.dispute-footer,
+.settlement-footer {
+  background: #f4f4f6;
+  box-shadow: 0px 5px 200px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  width: 64.5rem;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  color: #4d708d;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 18px;
+}
+.terminal-footer {
+  background: #f4f4f6;
+  box-shadow: 0px 5px 200px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  width: 63rem;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  color: #4d708d;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 18px;
+}
+.footer-pages {
+  padding: 15px 25px;
+}
+.footer-page-info {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  right: -45%;
+  font-weight: 300;
+  font-size: 14px;
+}
+.footer-number {
+  background-color: #ffffff;
+  width: 80px;
+  height: 10px;
+  text-align: center;
+  border: 0.5px solid #dbdbdb;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-left: 45%;
+  margin-bottom: 4px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+/* user starts here */
+.user-header-transaction {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.user-page-button,
+.terminal-page-button {
+  cursor: pointer;
+  width: 140px;
+  height: 38px;
+  background: #0097dc;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.user1-table-output,
+.terminal-table-output {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-family: "Euclid Circular B";
+  border: 1px solid #e3e7eb;
+  border-radius: 5px;
+  color: #4d708d;
+}
+.user1-table-output thead tr {
+  color: #004a5c;
+  font-weight: 0;
+  font-style: normal;
+  font-size: 16px;
+  text-align: left;
+  border: 1px solid #e3e7eb;
+  font-family: "Euclid Circular B";
+}
+.user1-table-output th,
+.user1-table-output td {
+  padding: 12px 19px;
+  cursor: pointer;
+}
+.enabled {
+  width: 90px;
+  height: 25px;
+  background: #3ba871;
+  border-radius: 4px;
+  /* font-weight: 500; */
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.user-modal-box,
+.user-modal-box-first,
+.user-modal-box-second,
+.user-modal-box-third,
+.terminal-modal-box {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+.user-modal-content {
+  position: fixed;
+  margin: 0 auto;
+  top: 20px;
+  z-index: 222;
+  left: 35%;
+}
+.terminal-modal-content,
+.user-modal-form {
+  position: fixed;
+  margin: 0 auto;
+  top: 20px;
+  z-index: 222;
+  left: 32%;
+}
+.user-modal-card {
+  background: #ffffff;
+  width: 440px;
+  height: 475px;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+.terminal-modal-card {
+  background: #ffffff;
+  width: 420px;
+  height: 445px;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+.transaction-box-listing,
+.terminal-listing,
+.settlement-box-listing {
+  display: flex;
+  font-family: "Euclid Circular B";
+  font-style: normal;
+}
+.list-header {
+  width: auto;
+  color: #4d708d;
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 20px;
+  padding-left: 20px;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(77, 112, 141, 0.05);
+}
+.user-listing-details,
+.transaction-listing-details,
+.terminal-listing-details,
+.settlement-listing-details {
+  margin-top: 39px;
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+}
+.user-list-box1 {
+  margin-top: 18px;
+  margin-left: 1.5rem;
+  text-align: left;
+}
+.terminal-list-box1 {
+  margin-top: 23px;
+  margin-left: -7rem;
+  text-align: left;
+}
+.user-list-box2 {
+  margin-top: 10px;
+  margin-right: 5.5rem;
+  text-align: right;
+}
+.list-id {
+  font-weight: 500px;
+  font-size: 14px;
+  color: rgba(77, 112, 141, 0.8);
+  margin-bottom: 23px;
+  margin-top: 3px;
+}
+.list-tag {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 120%;
+  color: rgba(77, 112, 141, 0.8);
+}
+
+.transaction-modal1-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+.transaction-modal-content,
+.settlement-modal-content {
+  position: fixed;
+  margin: 0 auto;
+  top: 7%;
+  z-index: 222;
+  left: 30%;
+}
+.transaction-modal-card {
+  background: #ffffff;
+  width: 490px;
+  height: 560px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.settlement-modal-card {
+  background: #ffffff;
+  width: 480px;
+  height: 590px;
+  border-radius: 20px;
+  margin-top: -15px;
+}
+.transaction-list-box1 {
+  margin-top: 23px;
+  margin-left: -8rem;
+  text-align: left;
+}
+.dispute-list-box1 {
+  margin-top: 23px;
+  margin-left: -6.5rem;
+  text-align: left;
+}
+
+.settlement-list-box1 {
+  margin-top: 23px;
+  margin-left: -8rem;
+  text-align: left;
+}
+.transaction-list-box2 {
+  margin-top: 23px;
+  margin-right: 30px;
+  text-align: right;
+}
+.transaction-close-button {
+  cursor: pointer;
+  width: 145px;
+  height: 39px;
+  background: #0097dc;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  font-weight: 550;
+  font-size: 14px;
+  margin-left: 11rem;
+  margin-top: -2rem;
+}
+.button-for-settlement {
+  display: flex;
+  margin-top: -2.5rem;
+  margin-left: 10.5rem;
+}
+.settlement-close-button {
+  cursor: pointer;
+  width: 145px;
+  height: 39px;
+  background: #0097dc;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+.user-button-handle {
+  display: flex;
+  margin-top: 0rem;
+  margin-left: 0rem;
+  justify-content: space-evenly;
+}
+.terminal-button-handle {
+  display: flex;
+  margin-top: 0.2rem;
+  margin-left: 0rem;
+  justify-content: space-evenly;
+}
+.dispute-list-box2 {
+  margin-top: 23px;
+  margin-right: 10%;
+  text-align: right;
+}
+.settlement-list-box2 {
+  margin-top: 23px;
+  margin-right: 35px;
+  text-align: right;
+}
+.user-button-handle-close,
+.user-button-handle-edit {
+  width: 117px;
+  height: 39px;
+  cursor: pointer;
+  background: #0097dc;
+  border-radius: 5px;
+  color: #ffffff;
+  border: none;
+  font-weight: 550;
+  font-size: 14px;
+}
+.terminal-list-tag {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 120%;
+  color: rgba(77, 112, 141, 0.8);
+}
+.terminal-list-id {
+  font-weight: 500px;
+  font-size: 14px;
+  line-height: 120%;
+  color: rgba(77, 112, 141, 0.8);
+  margin-bottom: 20px;
+  margin-top: 3px;
+}
+.terminal-enabled {
+  margin-bottom: 23px;
+  margin-top: 3px;
+  width: 90px;
+  height: 25px;
+  background: #3ba871;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 10px;
+  margin-left: 40%;
+}
+.terminal-list-box2 {
+  margin-top: 23px;
+  margin-right: 1.5rem;
+  text-align: right;
+}
+
+.settlement-modal1-box {
+  /* background: rgba(0, 0, 0, 0.3); */
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+
+.user-modal-form,
+.terminal-form {
+  position: fixed;
+  margin: 0 auto;
+  top: 20px;
+  z-index: 222;
+  left: 35%;
+}
+.user-modal-card-form {
+  background: #ffffff;
+  width: 480px;
+  height: 550px;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+.terminal-modal-form {
+  background: #ffffff;
+  width: 480px;
+  height: 470px;
+  border-radius: 20px;
+  margin-top: 50px;
+}
+.user-modal-card-form2 {
+  background: #ffffff;
+  width: 491px;
+  height: 580px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.form-list-header {
+  position: relative;
+  left: 42%;
+  color: #4d708d;
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 20px;
+  white-space: nowrap;
+  /* border-bottom: 1px solid rgba(77, 112, 141, 0.05); */
+}
+.terminal-form-list-header {
+  position: relative;
+  left: 42%;
+  color: #4d708d;
+  font-weight: 500;
+  font-size: 16px;
+  padding-top: 20px;
+  white-space: nowrap;
+}
+.form-user {
+  margin-top: 15px;
+  color: #4d708d;
+}
+.form-terminal {
+  margin-top: 40px;
+  color: #4d708d;
+}
+.user-input-form {
+  width: 370px;
+  height: 45px;
+  border: 1px solid #e0e7eb;
+  border-radius: 5px;
+  margin-left: 10%;
+  margin-top: 10px;
+  color: #4d708d;
+  font-size: 14px;
+  font-weight: 400;
+  outline: none;
+  padding-left: 10px;
+}
+.user-input-form::placeholder {
+  color: #4d708d;
+
+  font-family: "Euclid Circular B";
+}
+.user-form-terms {
+  color: #4d708d;
+  margin-top: 15px;
+  margin-left: 10%;
+  border: 1px solid #e0e7eb;
+  border-radius: 5px;
+}
+.user-form-button-submit,
+.user-form-button3-submit {
+  width: 180px;
+  height: 45px;
+  background: #0097dc;
+  border: 1px solid #0097dc;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-left: 35%;
+  font-size: 16px;
+  align-items: center;
+  color: #ffffff;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+.settlement-transaction-table {
+  width: 100%;
+  height: 100%;
+  margin-top: 5px;
+  background: white;
+  border-radius: 3px;
+  padding-right: 5rem;
+  padding-left: 15rem;
+}
+
+.settlement-table-input {
+  background: #ffffff;
+  border: 1px solid #e3e7eb;
+  border-radius: 4px;
+  width: 695px;
+  height: 40px;
+  margin: 10px 0 10px 10px;
+  text-align: center;
+  font-family: "Euclid Circular B";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  color: #4d708d;
+}
+.user-modal-form-box1 {
+  position: fixed;
+  margin: 0 auto;
+  top: 20px;
+  z-index: 222;
+  left: 35%;
+}
+
+.user-form-button2-submit {
+  width: 180px;
+  height: 45px;
+  background: #0097dc;
+  border: 1px solid #0097dc;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-left: 10rem;
+  font-size: 16px;
+  align-items: center;
+  color: #ffffff;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.input[type="date"]::before {
+  color: #4d708d;
+  content: attr(placeholder);
+  font-family: "Euclid Circular B";
+}
+.input[type="date"] {
+  color: #ffffff;
+  font-family: "Euclid Circular B";
+}
+.input[type="date"]:focus,
+.input[type="date"]:valid {
+  color: #4d708d;
+}
+.input[type="date"]:focus::before,
+.input[type="date"]:valid::before {
+  content: "" !important;
+  color: #4d708d;
+}
+.user-selection {
+  width: 380px;
+  height: 45px;
+  color: #4d708d;
+  font-size: 14px;
+  font-family: "Euclid Circular B";
+  margin-left: 3rem;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #e0e7eb;
+  margin-top: 10px;
+  outline: none;
+  padding: 10px;
+}
+.next-page-click {
+  margin-right: 2rem;
+}
+@media screen and (min-width: 1440px) {
+  .transaction-table-options,
+  .transaction-table-output,
+  .transaction-footer {
+    width: 71.5rem;
+  }
+  .main-dashboard-icon-text {
+    margin-left: 14rem;
+  }
+  .settlement-table-options,
+  .settlement-footer {
+    width: 71.5rem;
+  }
+  .user-table-options {
+    width: 71.5rem;
+  }
+  .dispute-table-options {
+    width: 71.5rem;
+  }
+  .terminal-table-options {
+    width: 71.5rem;
+  }
+  .transaction-table-filter {
+    margin-left: -3rem;
+  }
+  .terminal-footer {
+    width: 71.5rem;
+  }
+
+  .users-footer,
+  .user1-table-output,
+  .terminal-table-output {
+    width: 71.5rem;
+  }
+  .dispute-footer {
+    width: 71.5rem;
+  }
+  .side-bar-logout {
+    padding-top: 12rem;
+  }
+  /* .user-page-button,
+  .terminal-page-button {
+    position: relative;
+  } */
+  .user-header-transaction {
+    width: 71.5rem;
+  }
+}
+@media screen and (min-width: 1650px) {
+  .transaction-table-options,
+  .transaction-table-output,
+  .transaction-footer {
+    width: 101.5rem;
+  }
+  .main-dashboard-icon-text {
+    margin-left: 22rem;
+  }
+  .settlement-table-options,
+  .settlement-footer {
+    width: 101.5rem;
+  }
+  .user-table-options {
+    width: 101.5rem;
+  }
+  .dispute-table-options {
+    width: 101.5rem;
+  }
+  .terminal-table-options {
+    width: 101.5rem;
+  }
+  .transaction-table-filter {
+    margin-left: -5rem;
+  }
+  .terminal-footer {
+    width: 101.5rem;
+  }
+
+  .users-footer,
+  .user1-table-output,
+  .terminal-table-output {
+    width: 101.5rem;
+  }
+  .dispute-footer {
+    width: 101.5rem;
+  }
+  .side-bar-logout {
+    padding-top: 12rem;
+  }
+  /* .user-page-button,
+  .terminal-page-button {
+    position: relative;
+  } */
+  .user-header-transaction {
+    width: 101.5rem;
+  }
+  .terminal-table-input,
+  .transaction-table-input,
+  .settlement-table-input {
+    width: 70rem;
+  }
+}
